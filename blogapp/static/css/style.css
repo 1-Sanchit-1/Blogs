@@ -1,0 +1,69 @@
+body {
+    min-height: 100vh;
+    flex-direction: column;
+    /* display: flex; */
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.bg-primary {
+    background: #477091 !important;
+}
+
+.carousel-inner {
+    padding: 1em;
+}
+
+.card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    height: 280px;
+}
+
+body {
+    background: hsl(0, 0, 94%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px;
+    /* Should be removed. Only for demonstration */
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+}
+
+.card-image {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Blogs
+{% endblock %}
+
+{% block pcadmin %}
+  <a href="admin">Add Blogs</a>
+{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin-bottom: 300px; margin-top: 30px; ">
+    <div class="container-fluid my-5">
+      <h1 class="text-center fw-bold display-1 mb-5 bg-primary">Categories</h1>
+      <div class="row">
+        <div class="col-12 m-auto">
+          <div class="owl-carousel owl-theme">
+            <div class="item mb-4">
+              <div class="card border-0 shadow">
+                <img class="card-img-top" src="/media/category/categories.avif" alt="..." />
+                <div class="card-body">
+                  <div class="card-title text-center">
+                    <h4>Categaries</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% for cat in cats|slice:'2' %}
+              <a href="category/{{ cat.url }}">
+                <div class="item">
+                  <div class="card border-0 shadow">
+                    <img class="card-img-top" src="/media/{{ cat.image }}" alt="..." />
+                    <div class="card-body">
+                      <div class="card-title text-center">
+                        <h4>{{ cat.title|truncatechars:20 }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% for p in posts %}
+      <div class="row" style="margin-left: 230px;">
+        <div class="col s12 m8">
+          <h1 style="color:teal">{{ p.title }}</h1>
+          <p>{{ p.content|truncatechars:200 }}</p>
+          <div style="margin-top:25px">
+            <a href="blog/{{ p.url }}" class="btn bg-primary">Read More..</a>
+          </div>
+        </div>
+        <div class="col s12 m4" style="margin-top: 100px;">
+          <img style="width:150px ;height: 150px ;" src="/media/{{ p.image }}" alt="..." />
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

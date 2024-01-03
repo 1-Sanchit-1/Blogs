@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="row" style="margin-left: 130px;">
+    <div class="col s8">
+      <h1 style="color:teal">{{ posturl.title }}</h1>
+      <p>{{ posturl.content }}</p>
+      <img style="width:600px ;height: 250px ;" src="/media/{{ posturl.image }}" alt="..." />
+    </div>
+    <div class="col s1"></div>
+    <div class="col s3" style="margin-top: 100px;">
+      {% for cat in cats|slice:"3" %}
+        <div style="width: 12rem; height: 18rem;" class="card">
+          <img src="/media/{{ cat.image }}" class="card-img-top" alt="Fissure in Sandstone" />
+          <div class="card-body center">
+            <h5 class="card-title ">{{ cat.title }}</h5>
+            <a href="../category/{{ cat.url }}" class="btn btn-primary " data-mdb-ripple-init>View</a>
+          </div>
+          <div class="m-2"></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
