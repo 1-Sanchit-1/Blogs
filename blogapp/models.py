@@ -31,3 +31,16 @@ class Post(models.Model):
 
 
     
+class contactus(models.Model):
+    first_name = models.CharField(max_length = 200) 
+    last_name = models.CharField(max_length = 200) 
+    email = models.EmailField() 
+    subject=models.CharField(max_length=1000) 
+    Message=models.CharField(max_length=5000) 
+
+
+    class Meta:
+        verbose_name = ("Contact-form")
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name

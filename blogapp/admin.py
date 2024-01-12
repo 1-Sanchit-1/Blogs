@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import categories , Post 
+from .models import categories , Post ,contactus
 
 from django.utils.html import format_html
 
@@ -23,3 +23,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(categories, CategoryAdmin)
 admin.site.register(Post,PostAdmin)
+admin.site.register(contactus)      
